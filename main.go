@@ -39,7 +39,7 @@ func fullVersion() string {
 				if s.Key == "vcs.revision" && len(s.Value) >= 7 {
 					v += "-" + s.Value[:7]
 				} else if s.Key == "vcs.modified" && s.Value == "true" {
-					v += "+dirty"
+					v += "+modified"
 				}
 			}
 		}
