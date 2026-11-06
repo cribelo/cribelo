@@ -34,6 +34,15 @@ func fullVersion() string {
 	}
 	if v == "" {
 		v = "dev" // a local go build, neither a release nor a go install
+		if ok {
+			for _, s := range info.Settings {
+				if s.Key == "vcs.revision" && len(s.Value) >= 7 {
+					v += "-" + s.Value[:7]
+				} else if s.Key == "vcs.modified" && s.Value == "true" {
+					v += "+dirty"
+				}
+			}
+		}
 	}
 	if !ok {
 		return v
