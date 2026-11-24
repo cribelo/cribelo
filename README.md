@@ -33,7 +33,7 @@ cribelo
 
 It runs on your machine, from the git checkout. There is no service, no account and no language model, and the same change gives the same plan everywhere. It reads Go, PHP, Python, Rust, TypeScript, Java and C#.
 
-Without Homebrew: `curl -fsSL https://raw.githubusercontent.com/cribelo/cribelo/main/install.sh | sh`, or a binary for Linux, macOS and Windows from the [releases page](https://github.com/cribelo/cribelo/releases).
+Without Homebrew: `curl -fsSL https://cribelo.github.io/install.sh | sh`, or a binary for Linux, macOS and Windows from the [releases page](https://github.com/cribelo/cribelo/releases).
 
 ## Check it on your own history
 
