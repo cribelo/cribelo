@@ -32,8 +32,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # Pinned rather than read from go.mod: published binaries must embed a
+      # stdlib that still gets fixes. The go.mod directive stays the minimum
+      # version needed to compile from source.
       - uses: actions/setup-go@v7
-        with: { go-version-file: go.mod }
+        with: { go-version: "1.27.x" }
 
       - name: Toolchain (Linux)
         if: startsWith(matrix.os, 'ubuntu')

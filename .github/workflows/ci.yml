@@ -4,11 +4,17 @@ permissions:
   contents: read
 jobs:
   build:
+    # The low entry is what go.mod declares, the high one catches toolchain
+    # regressions before they reach a release.
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ["1.26.x", "1.27.x"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-go@v7
-        with: { go-version-file: go.mod }
+        with: { go-version: "${{ matrix.go }}" }
       - run: sudo apt-get update && sudo apt-get install -y build-essential
       - run: go vet ./...
       - run: go test ./...

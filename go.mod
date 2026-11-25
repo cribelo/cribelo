@@ -1,6 +1,6 @@
 module github.com/cribelo/cribelo
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/ast-metrics/ast-metrics v0.43.2-0.20261112150812-3e84240f381e
